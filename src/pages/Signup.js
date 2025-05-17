@@ -62,7 +62,7 @@ function Signup() {
         formData.append("photo", photo);
 
         try {
-            const response = await fetch("http://localhost:8080/api/addStudent", {
+            const response = await fetch("https://ochp-backend.onrender.com/api/addStudent", {
                 method: "POST",
                 body: formData
             })

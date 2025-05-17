@@ -15,7 +15,7 @@ function DashBoard() {
     
 
     useEffect(() => {
-        fetch("http://localhost:8080/api/jobs")
+        fetch("https://ochp-backend.onrender.com/api/jobs")
             .then((res) => res.json())
             .then((data) => {
                 // console.log('Fetched jobs:', data);

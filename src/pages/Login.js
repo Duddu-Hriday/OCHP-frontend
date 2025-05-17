@@ -30,7 +30,7 @@ function Login() {
         formData.append("student", JSON.stringify(student));
 
         try {
-            const response = await fetch("http://localhost:8080/api/verifyStudent", {
+            const response = await fetch("https://ochp-backend.onrender.com/api/verifyStudent", {
                 method: "POST",
                 body: formData
             });

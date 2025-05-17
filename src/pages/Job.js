@@ -23,7 +23,7 @@ function Job() {
         const formData = new FormData();
         formData.append("jobApplication", JSON.stringify(jobApplication));
         try {
-            const response = await fetch("http://localhost:8080/api/addApplication", {
+            const response = await fetch("https://ochp-backend.onrender.com/api/addApplication", {
                 method: "POST",
                 body: formData
             })
@@ -58,7 +58,7 @@ function Job() {
     // const navigate = useNavigate();
 
     useEffect(() => {
-        fetch(`http://localhost:8080/api/job/${id}`)
+        fetch(`https://ochp-backend.onrender.com/api/job/${id}`)
             .then((res) => res.json())
             .then((data) => {
                 // console.log('Fetched jobs:', data);

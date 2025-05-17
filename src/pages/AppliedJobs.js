@@ -16,7 +16,7 @@ function AppliedJobs() {
 
     useEffect(() => {
         var roll = localStorage.getItem("student");
-        fetch(`http://localhost:8080/api/appliedjobs?id=${roll}`)
+        fetch(`https://ochp-backend.onrender.com/api/appliedjobs?id=${roll}`)
             .then((res) => res.json())
             .then((data) => {
                 // console.log('Fetched jobs:', data);
