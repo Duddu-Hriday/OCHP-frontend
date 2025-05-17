@@ -14,8 +14,10 @@ function Job() {
     })
 
     const { id } = useParams();
+    const [loading, setLoading] = useState(false);
 
     const handleApply = async (e) => {
+        setLoading(true);
         const jobApplication = {
             roll:localStorage.getItem("student"),
             jobId: id
@@ -51,6 +53,10 @@ function Job() {
             navigate("/dashboard");
         }
         
+        finally {
+        setLoading(false);  // Stop loading
+        }
+        
     }
     const [job, setJob] = useState("");
 
@@ -80,7 +86,7 @@ function Job() {
             <p><strong>Joining Date:</strong> {job.joiningDate}</p>
             <p><strong>No of Interview Rounds:</strong> {job.interviewRounds}</p>
             <p><strong>Additional Conditions:</strong> {job.conditions}</p>
-            <button onClick={handleApply}>Apply</button>
+            <button disabled={loading} onClick={handleApply}>{loading ? <span className="spinner"></span> : "Apply"}</button>
         </div>
     );
 

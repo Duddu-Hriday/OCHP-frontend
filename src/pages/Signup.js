@@ -24,7 +24,7 @@ function Signup() {
     const [cpassword, setCpassword] = useState("");
     const [resume, setResume] = useState(null);
     const [photo, setPhoto] = useState(null);
-
+    const [loading, setLoading] = useState(false);
     
 
     const handleRedirect = (e) => {
@@ -35,6 +35,7 @@ function Signup() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        setLoading(true);
         if (password !== cpassword) {
             alert("Passwords didnot match!!");
             return;
@@ -87,6 +88,11 @@ function Signup() {
             console.error("Error: ", err);
             alert("Something went wrong");
         }
+
+        finally {
+        setLoading(false);  // Stop loading
+    }
+
         // alert(`The name is:  ${name}`);
     }
 
@@ -114,7 +120,7 @@ function Signup() {
                 <label>Retype Password:</label><input type='password' value={cpassword} onChange={(e) => setCpassword(e.target.value)} required></input>
                 <label>Resume: </label><input type='file' onChange={handleResumeUpload} required></input>
                 <label>Photo: </label><input type='file' onChange={handlePhotoUpload} required></input>
-                <button type='submit'>Register</button>
+                <button type='submit' disabled={loading}>{loading ? <span className="spinner"></span> : "Register"}</button>
                 <button onClick={handleRedirect}>Login</button>
 
             </form>
