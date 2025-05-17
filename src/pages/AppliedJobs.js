@@ -29,7 +29,7 @@ function AppliedJobs() {
 
     return (
         <div className="dashboard">
-            <h2>Available Jobs</h2>
+            <h2>Applied Jobs</h2>
             <div className="job-cards-container">
                 {jobs.length === 0 ? (
                     <p>No jobs available</p>

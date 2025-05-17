@@ -12,6 +12,8 @@ function Login() {
 
     const [roll, setRoll] = new useState("");
     const [password, setPassword] = new useState("");
+    const [loading, setLoading] = useState(false);
+
     const navigate = useNavigate();
 
     const handleRedirect = (e) => {
@@ -21,6 +23,7 @@ function Login() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        setLoading(true);
         const student = {
             roll,
             password
@@ -57,6 +60,10 @@ function Login() {
             alert("Something went wrong");
         }
 
+        finally {
+        setLoading(false);  // Stop loading
+    }
+
     }
     return (
         <>
@@ -65,7 +72,7 @@ function Login() {
                 <div>Student Login</div>
                 <label>Roll No: </label><input type='text' value={roll} onChange={(e) => setRoll(e.target.value)}></input>
                 <label>Password:</label><input type='password' value={password} onChange={(e) => setPassword(e.target.value)}></input>
-                <button type='submit'>Login</button>
+                <button type='submit' disabled={loading}>{loading ? <span className="spinner"></span> : "Login"}</button>
                 <button onClick={handleRedirect}>New Student</button>
 
             </form>
