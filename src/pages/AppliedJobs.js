@@ -12,7 +12,7 @@ function AppliedJobs() {
         }
     })
     const [jobs, setJobs] = useState([]);
-    
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         var roll = localStorage.getItem("student");
@@ -23,13 +23,17 @@ function AppliedJobs() {
                 setJobs(data)
             })
             .catch(
-                (err) => console.error(err)
-            );
+                (err) => console.error(err))
+                .finally(() => setLoading(false));
     }, []);
 
     return (
-        <div className="dashboard">
-            <h2>Applied Jobs</h2>
+    <div className="dashboard">
+        <h2>Applied Jobs</h2>
+
+        {loading ? (
+            <div className="spinner"></div> // Show loading spinner
+        ) : (
             <div className="job-cards-container">
                 {jobs.length === 0 ? (
                     <p>No jobs available</p>
@@ -45,8 +49,10 @@ function AppliedJobs() {
                     ))
                 )}
             </div>
-        </div>
-    );
+        )}
+    </div>
+);
+
 
 }
 

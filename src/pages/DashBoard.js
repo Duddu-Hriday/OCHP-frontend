@@ -12,7 +12,7 @@ function DashBoard() {
         }
     })
     const [jobs, setJobs] = useState([]);
-    
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         fetch("https://ochp-backend.onrender.com/api/jobs")
@@ -22,13 +22,17 @@ function DashBoard() {
                 setJobs(data)
             })
             .catch(
-                (err) => console.error(err)
-            );
+                (err) => console.error(err))
+                .finally(() => setLoading(false));
     }, []);
 
     return (
-        <div className="dashboard">
-            <h2>Available Jobs</h2>
+    <div className="dashboard">
+        <h2>Available Jobs</h2>
+
+        {loading ? (
+            <div className="spinner"></div> // Show loading spinner
+        ) : (
             <div className="job-cards-container">
                 {jobs.length === 0 ? (
                     <p>No jobs available</p>
@@ -44,8 +48,9 @@ function DashBoard() {
                     ))
                 )}
             </div>
-        </div>
-    );
+        )}
+    </div>
+);
 
 }
 
