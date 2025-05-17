@@ -1,0 +1,246 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url('/bgimage.jpeg'); /* path from public folder */
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat;
+}
+
+
+.App {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  background-color: #f0f2f5;
+  /* min-height: 100vh; */
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header {
+  border: 2px solid black;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: white;
+}
+
+header img {
+  height: 120px;
+  margin-right: 20px;
+}
+
+header h1 {
+  padding-left: 25%;
+  font-size: 24px;
+  color: #000000;
+  margin: 0;
+}
+
+
+form {
+  width: 700px;
+  margin: 100px auto;
+  padding: 30px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  background-color: #cbccc0;
+  box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+}
+
+form div {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+form label {
+  display: block;
+  margin: 10px 0 5px;
+  font-size: 14px;
+  color: #333;
+}
+
+form input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #655d5d;
+  border-radius: 5px;
+  box-sizing: border-box;
+  background-color: #3d363640;
+}
+
+form button {
+  width: 40%;
+  padding: 10px;
+  background-color: #007bff;
+  border: none;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 25px;
+}
+
+form button:hover {
+  background-color: #0056b3;
+}
+
+
+.dashboard {
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f7fa;
+  min-height: 100vh;
+}
+
+.job-cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.job-card {
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 16px;
+  width: 300px;
+  background-color: #e3e0eb;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.job-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.job-card button {
+  margin-top: 20px;
+  padding: 12px 16px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  background: linear-gradient(135deg, #4a90e2, #357ABD);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 6px rgba(54, 109, 180, 0.4);
+}
+
+.job-card button:hover {
+  background: linear-gradient(135deg, #357ABD, #2a5d9f);
+  box-shadow: 0 6px 12px rgba(39, 78, 145, 0.6);
+}
+
+.jobdashboard {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 32px;
+  background: linear-gradient(to right, #fdfbfb, #ebedee);
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: transform 0.3s ease;
+}
+
+.jobdashboard:hover {
+  transform: translateY(-4px);
+}
+
+.jobdashboard h2 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.jobdashboard p {
+  font-size: 18px;
+  color: #333;
+  line-height: 1.6;
+  margin: 12px 0;
+  padding-left: 10px;
+  border-left: 4px solid #007bff20;
+}
+
+.jobdashboard strong {
+  color: #000;
+  font-weight: 600;
+}
+
+.jobdashboard button {
+  display: block;
+  width: 100%;
+  padding: 14px 0;
+  margin-top: 30px;
+  background: linear-gradient(to right, #007bff, #0056b3);
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.jobdashboard button:hover {
+  background: linear-gradient(to right, #0056b3, #003e8c);
+  transform: scale(1.03);
+}
+
+
+
+.lgoutbtn {
+  margin: 20px;
+  padding: 12px 16px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  background: linear-gradient(135deg, #e24a4a, #bd5e35f2);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 6px rgba(180, 81, 54, 0.4);
+}
+
+.lgoutbtn:hover {
+  background: linear-gradient(135deg, #bd3535, #9f532aed);
+  box-shadow: 0 6px 12px rgba(145, 62, 39, 0.6);
+}
+
+
+.applied {
+  margin: 20px;
+  padding: 12px 16px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  background: linear-gradient(135deg, #4a57e2, #353cbdf2);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 6px rgba(54, 73, 180, 0.4);
+}
+
+.applied:hover {
+  background: linear-gradient(135deg, #3540bd, #382a9fed);
+  box-shadow: 0 6px 12px rgba(66, 39, 145, 0.6);
+}
