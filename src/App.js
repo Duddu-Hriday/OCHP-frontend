@@ -6,6 +6,9 @@ import Signup from './pages/Signup'
 import Dashboard from './pages/DashBoard'
 import Job from './pages/Job'
 import AppliedJobs from './pages/AppliedJobs'
+import Admin from './admin/Admin'
+import AdminDashboard from './admin/AdminDashboard'
+import AddJob from './admin/AddJob';
 function App() {
 
   function applied()
@@ -16,6 +19,11 @@ function App() {
   function logout()
   {
     localStorage.removeItem("student");
+    window.location.reload(); 
+  }
+  function adminlogout()
+  {
+    localStorage.removeItem("admin");
     window.location.reload(); 
   }
 
@@ -32,6 +40,9 @@ function App() {
           localStorage.getItem("student")?<button className='lgoutbtn' onClick={logout}>Logout</button>:<p></p>
         }
         {
+          localStorage.getItem("admin")?<button className='lgoutbtn' onClick={adminlogout}>Logout</button>:<p></p>
+        }
+        {
           localStorage.getItem("student")?<button className='applied' onClick={applied}>Applied Jobs</button>:<p></p>
         }
       </header>
@@ -44,6 +55,9 @@ function App() {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path ="/job/:id" element={<Job/>}/>
           <Route path="/appliedjobs" element = {<AppliedJobs/>}/>
+          <Route path="/admin" element={<Admin/>}/>
+          <Route path="/adminDashboard" element={<AdminDashboard/>}/>
+          <Route path="/addJob" element={<AddJob></AddJob>}/>
       </Routes>
     </BrowserRouter>
     </>
