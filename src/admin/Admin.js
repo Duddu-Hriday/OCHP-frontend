@@ -24,7 +24,7 @@ function Admin() {
         formData.append("admin", JSON.stringify(admin));
 
         try {
-            const response = await fetch("http://localhost:8080/admin/verifyAdmin", {
+            const response = await fetch("https://ochp-backend.onrender.com/admin/verifyAdmin", {
                 method: "POST",
                 body: formData
             });

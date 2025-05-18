@@ -44,7 +44,7 @@ function AddJob() {
         formData.append("job", JSON.stringify(job));
 
         try {
-            const response = await fetch("http://localhost:8080/admin/addJob", {
+            const response = await fetch("https://ochp-backend.onrender.com/admin/addJob", {
                 method: "POST",
                 body: formData
             })
