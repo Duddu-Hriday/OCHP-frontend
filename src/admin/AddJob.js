@@ -83,7 +83,7 @@ function AddJob() {
                 <label>CTC: </label><input type='text' value={ctc} onChange={(e) => setCtc(e.target.value)} required></input>
                 <label>Interview Date: </label><input type='text' value={interviewDate} onChange={(e) => setInterviewDate(e.target.value)} required></input>
                 <label>Joining Date: </label><input type='text' value={joiningDate} onChange={(e) => setJoiningDate(e.target.value)} required></input>
-                <label>Interview Rounds:</label><input type='text' value={interviewDate} onChange={(e) => setInterviewRounds(e.target.value)} required></input>
+                <label>Interview Rounds:</label><input type='text' value={interviewRounds} onChange={(e) => setInterviewRounds(e.target.value)} required></input>
                 <label>Conditions: </label><input type='text' value={conditions} onChange={(e) => setConditions(e.target.value)} required></input>
                 <button type='submit'>Add Job</button>
 
